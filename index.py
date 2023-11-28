@@ -10,7 +10,8 @@ def caixa_de_cadastro():
     paciente = {'Nome':nome, 'Idade':idade, 'Cid':cid}
     pacientes.append(paciente)
     
-    disp_tf.insert(0, pacientes)
+    disp_tf.insert(0, f'{paciente["Nome"]}; {paciente["Idade"]} anos; {paciente["Cid"]}')
+    disp_msg.insert(0, f'Cadastro realizado com sucesso!')
     
 ws = Tk()
 ws.title("Cadastro de Pacientes")
@@ -37,5 +38,8 @@ btn.pack(pady=10)
 
 disp_tf = Entry(ws, width=38, font=('Arial', '12'))
 disp_tf.pack(pady=5)
+
+disp_msg = Entry(ws, width=38, font=('Arial', '12'), bg='#de923e')
+disp_msg.pack(pady=5)
 
 ws.mainloop()
